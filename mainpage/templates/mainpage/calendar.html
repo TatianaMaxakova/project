@@ -1,0 +1,17 @@
+<table border="1">
+    <tr><th>Время</th><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>
+    {% for ts in timeslots %}
+    <tr>
+        <th>{{ts.time}}</th>
+        {% for wd in ts.weekdays %}
+        <td>
+            {% if wd.free %}
+                FREE
+            {% else %}
+                {{ wd.task.description }}
+            {% endif %}
+        </td>
+        {% endfor %}
+    {% endfor %}
+    </tr>
+</table>

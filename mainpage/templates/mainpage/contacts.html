@@ -1,0 +1,43 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты - Салон Маникюра</title>
+    <link rel="stylesheet" href={% static "mainpage/contacts.css" %}> <!-- Подключите свой CSS файл здесь -->
+</head>
+<body>
+
+<header>
+    <h1>Контакты Салона Маникюра</h1>
+</header>
+
+<div class="container">
+    <h2>Свяжитесь с нами</h2>
+    <p>Если у вас есть вопросы или предложения, пожалуйста, заполните форму ниже:</p>
+
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Ваше имя" required>
+        <input type="email" id="email" placeholder="Ваш email" required>
+        <textarea id="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <div class="contact-info">
+        <h3>Наши контактные данные:</h3>
+        <p>Адрес: г. Москва</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+        <p>Электронная почта: info@manicure-salon.ru</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+        alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.'); // Сообщение пользователю
+        this.reset(); // Очистим форму после отправки
+    });
+</script>
+
+</body>
+</html>

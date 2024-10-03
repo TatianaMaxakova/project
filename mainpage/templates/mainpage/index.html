@@ -1,0 +1,39 @@
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href={% static "mainpage/mainstyle.css" %}> <!-- Подключите свой CSS файл здесь -->
+    
+  </head>
+  <body>
+   <header>
+    {% include "mainpage/menu.html" %}
+    </header>
+    <main>
+      <article>
+        <section>
+          <h2>НОВАЯ РАБОТА</h2>
+          <img src="images/image.png" alt="Последняя работа">
+          <p></p>
+        </section>
+        <div class="titlepage">
+          <h2>Будь красивой до кончиков ногтей </h2>
+        </div>
+        <div class="container">
+          <button id="signupButton">Записаться</button>
+        </div>
+          <a class="get_btn" href="Javascript:void(0)" role="button">Записаться</a>
+       </div>
+      </article>
+    </main>
+    <footer>
+      <p>Ссылки</p>
+      <p>&copy;  {% now "Y" %} Компания</p>
+    </footer>
+  </body>
+</html>
+
+
+
