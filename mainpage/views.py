@@ -119,7 +119,7 @@ def calender(request, dtstr=''):
     }
     return render(
         request,                    # Запрос
-	    'mainpage/calendar.html',   # путь к шаблону
+	    'mainpage/calender.html',   # путь к шаблону
         context                     # подстановки
     )     
     

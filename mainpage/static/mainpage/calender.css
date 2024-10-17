@@ -1,0 +1,29 @@
+/* Общие стили для таблицы */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Стили для заголовков таблицы */
+.table th {
+    background-color: #d5006d; /* Цвет заголовка */
+    color: white;
+    padding: 15px;
+    text-align: left;
+}
+/* Стили для ячеек таблицы */
+.table td {
+    border: 1px solid #ddd; /* Граница ячеек */
+    padding: 12px;
+}
+
+/* Стили для строк таблицы */
+.table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Чередующиеся цвета строк */
+}
+
+.table tr:hover {
+    background-color: #d5006d; /* Цвет при наведении */
+}

@@ -1,8 +1,8 @@
 
 <nav>
-    <a href="#">Главная</a>
-    <a href="#">О нас</a>
-    <a href="#">Услуги</a>
-    <a href="#">Календарь</a>
-    <a href="#">Контакты</a>
+    <a href={% url 'mainpage' %}>Главная</a>
+    <a href={% url 'about_us' %}>О нас</a>
+    <a href={% url 'services' %}>Услуги</a>
+    <a href={% url 'calender_now' %}>Календарь</a>
+    <a href={% url 'contacts' %}>Контакты</a>
 </nav>

@@ -1,3 +1,5 @@
+{% load static %}
+<link rel="stylesheet" href={% static "mainpage/calender.css" %}> <!-- Подключите свой CSS файл здесь -->
 <table border="1">
     <tr><th>Время</th><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>
     {% for ts in timeslots %}
