@@ -1,6 +1,8 @@
 {% load static %}
-<link rel="stylesheet" href={% static "mainpage/calender.css" %}> <!-- Подключите свой CSS файл здесь -->
-<table border="1">
+<!--<link rel="stylesheet" href={% static "mainpage/calender.css" %}> -->
+<link rel="stylesheet" href={% static "mainpage/calender_now.css" %}> <!-- Подключите свой CSS файл здесь -->
+<link rel="stylesheet" href={% static "mainpage/button.css" %}>
+<table border="10">
     <tr><th>Время</th><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>
     {% for ts in timeslots %}
     <tr>
@@ -8,7 +10,11 @@
         {% for wd in ts.weekdays %}
         <td>
             {% if wd.free %}
-                FREE
+                <!--<a href={% url 'calender_now' %}>FREE</a>-->
+                <a href="calender_now" class="btn">FREE</a>
+                <!--<<form action="calender_now.html" target="_blank">
+                    <button>FREE</button>
+                   </form>-->
             {% else %}
                 {{ wd.task.description }}
             {% endif %}

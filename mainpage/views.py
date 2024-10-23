@@ -96,15 +96,15 @@ def calender(request, dtstr=''):
     timeslots = newWeek(dt)
     # Все задачи на эту неделю
     visits = models.Visit.objects.filter(  # Достаточно фильтровать по одному параметру, если все слоты умещаются в текущие сутки и никто заполночь не работает
-        start_time=dt.strftime('%Y-%m-%d')
-    ).filter(end_time=dt_next.strftime('%Y-%m-%d'))
+        start_time__gte=dt.strftime('%Y-%m-%d')
+    ).filter(end_time__lte=dt_next.strftime('%Y-%m-%d'))
     print(visits)
     for t in visits:
-        tm = t.softline.strftime('%H:%M')
+        tm = t.start_time.strftime('%H:%M')
         #print(t.description, t.softline, tm)
         #print(timeslots[tm])
         if tm in timeslots:
-            s = timeslots[tm]['weekdays'][t.softline.weekday()]
+            s = timeslots[tm]['weekdays'][t.start_time.weekday()]
             s['free'] = False
             s['task'] = t
     # Превращаем в список, чтобы потом не мучиться упорядочиваением
