@@ -1,8 +1,8 @@
 {% load static %}
 <!--<link rel="stylesheet" href={% static "mainpage/calender.css" %}> -->
-<link rel="stylesheet" href={% static "mainpage/calender_now.css" %}> <!-- Подключите свой CSS файл здесь -->
+<!--<link rel="stylesheet" href={% static "mainpage/calender_now.css" %}> <!-- Подключите свой CSS файл здесь -->
 <link rel="stylesheet" href={% static "mainpage/button.css" %}>
-<table border="10">
+<table border="350">
     <tr><th>Время</th><th>ПН</th><th>ВТ</th><th>СР</th><th>ЧТ</th><th>ПТ</th><th>СБ</th><th>ВС</th></tr>
     {% for ts in timeslots %}
     <tr>

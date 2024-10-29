@@ -1,5 +1,3 @@
-
-
 .table {
 	width: 100%;
 	margin-bottom: 20px;
@@ -29,5 +27,5 @@
 	font-size: 15px;
 }
 .table tbody tr:nth-child(even){
-	background: #1e3fe4!important;
+	background: #f7f7f8!important;
 }

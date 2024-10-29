@@ -1,3 +1,18 @@
+.table { 
+    width: 100vw; 
+    height: 100vh; 
+}
+
+.table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .table tr {
+    width: 100px;
+    height: 100px;
+  }
 .btn {
     padding: 8px 15px;
     background-color: #3498db;
