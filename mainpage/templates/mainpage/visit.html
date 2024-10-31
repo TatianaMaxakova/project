@@ -1,0 +1,7 @@
+
+{% include "mainpage/menu.html" %}
+<form action={% url 'visit' currtime  %} method="post">
+    {% csrf_token %}
+    {{visitform}}
+    <input type='submit' value='Записаться'>
+</form>

@@ -4,11 +4,30 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
+/*header {
+    background: #d5006d; Цвет заголовка 
+    color: white;
+    padding: 10px 0;
+    /*text-align: center; 
+}
+*/
 header {
-    background: #d5006d; /* Цвет заголовка */
+    background: #007bff;
     color: white;
     padding: 10px 0;
     text-align: center;
+}
+nav {
+    margin: 10px 0;
+}
+nav a {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+nav a:hover {
+  background: #0056b3;
+  border-radius: 5px;
 }
 .container {
     max-width: 800px;

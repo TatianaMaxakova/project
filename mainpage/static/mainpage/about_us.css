@@ -5,7 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 header {
-    background: #d5006d; /* Цвет заголовка */
+    background: #cc91ec; /* Цвет заголовка */
     color: white;
     padding: 15px 0;
     text-align: center;
@@ -20,7 +20,7 @@ header {
     margin-top: 20px;
 }
 h2 {
-    color: #d5006d;
+    color: #9eebf3;
 }
 p {
     line-height: 1.6;

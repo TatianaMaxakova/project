@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 
 from . import models
+from . import forms
 from datetime import datetime
 from datetime import timedelta
 
@@ -75,7 +76,8 @@ def newWeek(dt):
         tm = s.strftime('%H:%M')
         timeslots[tm] = {
             'time': tm,
-            'weekdays': wd
+            'weekdays': wd,
+            'datetime': s.strftime('%Y-%m-%dT%H:%M'),
         }
         s += timedelta(seconds=1800)  # 3600 = 60*60 - это час в секундах
         if s.hour > work_starts + slots_per_day / 2:
@@ -83,6 +85,23 @@ def newWeek(dt):
             s = datetime(s.year, s.month, s.day, work_starts)
     return timeslots
 
+
+def create_visit(request, dtstr=''):
+    if request.method == "POST":
+        print(request.POST)
+        form = forms.VisitForm(request.POST)
+        if form.is_valid():
+            print(form.cleaned_data)
+            #form.save()
+    form = forms.VisitForm(initial={'start_time': dtstr})
+    return render(
+        request,                    # Запрос
+	    'mainpage/visit.html',   # путь к шаблону
+        {
+            'visitform': form,
+            'currtime': 'default'
+        }                     # подстановки
+    )  
 
 def calender(request, dtstr=''):
     dt = datetime.now()
@@ -115,11 +134,13 @@ def calender(request, dtstr=''):
         'prev_week': (dt - timedelta(7)).strftime('%Y%m%d'),
         'curr_week': (dt).strftime('%Y%m%d'),
         'next_week': (dt + timedelta(7)).strftime('%Y%m%d'),
-        'timeslots': timeslots_list
+        'timeslots': timeslots_list,
     }
     return render(
         request,                    # Запрос
 	    'mainpage/calender.html',   # путь к шаблону
         context                     # подстановки
     )     
+    
+  
     

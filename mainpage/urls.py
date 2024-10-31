@@ -9,5 +9,6 @@ urlpatterns = [
     path('calender/', views.calender,      name='calender_now'),
     # Calendar view
     path('calender/<str:dtstr>/', views.calender,      name='calender'),
-    path('services/', views.services, name='services'),
+    path('services/', views.services,       name='services'),
+    path('visit/<str:dtstr>/',    views.create_visit, name='visit'),
 ]
